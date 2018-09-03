@@ -14,7 +14,11 @@ def word_histogram(file_name):
     """ read a txt file and count number of occurance of words. 
     Each word and number of occurance are stored into a dic
     """
-    fin = open(file_name)
+    try:
+        fin = open(file_name)
+    except:
+        print('The file can not be opened')
+        
     print('========================================')
     lines = fin.readlines()
     print(' Number of lines in this file: ', len(lines))
@@ -45,29 +49,27 @@ def total_num_words(hist):
     tot = 0
     for n_val in hist.values():
         tot += n_val
-    print(tot)
+    print('the total number of words', tot)
     return tot
 
 ########################################
 ###             Main Code           ####
 ########################################
-os.chdir('./Bram_Stoker/')
-for file_in_dir in os.listdir():
-    hist = word_histogram(file_in_dir)
-    t = most_common(hist)
-    total_num_words(hist)
-
-# file_name = 'TheLadyoftheShroud.txt'
-# hist = word_histogram(file_name)
-# t = most_common(hist)
-
-# file_name = 'TheJewelofSevenStars.txt'
-# hist = word_histogram(file_name)
-# t = most_common(hist)
-
-# file_name = 'TheLairoftheWhiteWorm.txt'
-# hist = word_histogram(file_name)
-# t = most_common(hist)
+author_names = ['Jane Austin', 'Bram Stoker', 'James Joyce', 'Friedrich Nietzsche']
+path = os.path.abspath('./')
+for author in author_names:
+    print('\n')
+    print('****************************************')
+    print('        author:  %s ' % author)
+    print('****************************************')
+    folder = author.replace(' ', '_')
+    
+    os.chdir(path+'/'+folder)
+    for file_in_dir in os.listdir():
+        print('\n', file_in_dir)
+        hist = word_histogram(file_in_dir)
+        t = most_common(hist)
+        print('Ratio of new words to total: ', len(t)/total_num_words(hist))
 
 ########################################
 ###            Plotting              ###
