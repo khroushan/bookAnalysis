@@ -13,23 +13,18 @@ and build a dictionary of new words and number of occurance of each
 words in the text. Here are some results for each author and
 text.
 
-+------------------+---------+---------
-|
-|
-|    James Joyce
-+-------------------
-|
-|    Jane Austin
-|
-+-------------------
-|
-|    Bram Stoker
-|
-+-------------------
-|
-| Fredrich Nietzche
-|
-+----------------------------------------
+| Jane Austin    |  New Words  | Total Words
+|----------------|-------------|------------
+| Emma           | 8905        | 164120
+| Persuasion     | 6190        |  86755
+|MansfieldPark   | 9376        | 163560
+
+| James Joyce    |  New Words  | Total Words
+|----------------|-------------|------------
+| Emma           | 8905        | 164120
+| Persuasion     | 6190        |  86755
+|MansfieldPark   | 9376        | 163560
+
 
 According to this simple analysis, we can see the ratio of number
 of new words to the total number of words for each author is constant
@@ -48,7 +43,14 @@ at different length of a same book. For example to the analysis at 1/4
 of the book till whole book.
 
 
-The other thing that we can try is .... theorem, if we look at the
-instagram of occurance of the words it seems they are fit into eq ....
+The other thing that we can do is to check the Zipf's law. According to
+Zipf's law the frequency of a word is predicted by
+$$ f = cr^{-s} $$
+where $r$ is the rank of the word in text. If $s$ is different for different author? 
 
-The next goal would be recognition of an author form 
+The next goal would be recognition of an author form the feeded
+text. possible way is to follow the same step for spam filtering with the difference
+that the decision is not binary (number of authors). Maybe better to remove
+high frequency words such as 'a' 'the' word between all authors.
+
+
