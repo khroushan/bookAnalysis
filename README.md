@@ -9,7 +9,7 @@ well-known authors such as Jame Joyce, Jane Austin, Bram Stoker and
 english translation of works by Friedrich Nietzche.
 
 Fortunately, the texts can be collected from [Gutenberg
-project]{https://www.gutenberg.org}. Frist I performed a simple
+project](https://www.gutenberg.org). Frist I performed a simple
 analysis and build a dictionary of new words and number of occurance
 of each words in the text. Here are some results for Jane Austin and
 James Joyce.
